@@ -12,6 +12,10 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 ; keys - https://www.autohotkey.com/docs/KeyList.htm
+;! alt
+;# winkey
+;^ ctrl
+
 
 ; ctr + f highlighted text
 #f::
@@ -30,11 +34,22 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #y::Run, www.youtube.com
 #m::Run, www.messenger.com
 
+; media
+!;::Send {Volume_Up}
+!'::Send {Volume_Down}
+
+; switch desktops
+!a::Send ^#{Left}
+!s::Send ^#{Right}
 
 ; MOUSE BUTTON SHORTCUTS
 ; ======================
 ; F numbering corresponds to button numbers
 ; F16 is G-Shift button
+
+;youtube
+F16 & RButton::Send >>>>
+F16 & LButton::Send <<<<
 
 ; switch desktops
 F16 & F17::Send ^#{Left}
