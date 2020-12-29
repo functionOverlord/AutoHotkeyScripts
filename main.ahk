@@ -42,12 +42,16 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 !a::Send ^#{Left}
 !s::Send ^#{Right}
 
+; highlight text from caret to home/end
+RAlt & i::Send {Shift down}{Home}{Shift up}
+RAlt & o::Send {Shift down}{End}{Shift up}
+
 ; MOUSE BUTTON SHORTCUTS
 ; ======================
 ; F numbering corresponds to button numbers
 ; F16 is G-Shift button
 
-;youtube
+; YouTube
 F16 & RButton::Send >>>>
 F16 & LButton::Send <<<<
 
