@@ -29,41 +29,58 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; YouTube
 !x::Send >>>>
 !z::Send <<<<
+F19::Send >>>>
+F20::Send <<<<
+
 
 ; Sites
 #y::Run, www.youtube.com
 #m::Run, www.messenger.com
+; # & Shift & w::Run, www.web.whatsapp.com
+
 
 ; media
-!;::Send {Volume_Up}
-!'::Send {Volume_Down}
+!;::Send {Volume_Down}
+F13::Send {Volume_Down}
+!'::Send {Volume_Up}
+F14::Send {Volume_Up}
+
+F15::Send {Media_Next}
+F16::Send {Media_Play_Pause}
+
 
 ; switch desktops
 !a::Send ^#{Left}
 !s::Send ^#{Right}
+F17::Send ^#{Left}
+F18::Send ^#{Right}
+
+
 
 ; highlight text from caret to home/end
-RAlt & i::Send {Shift down}{Home}{Shift up}
-RAlt & o::Send {Shift down}{End}{Shift up}
+RAlt & i::Send {Shift down}{Home}{Shift up}{CTRL down}{b}{CTRL up}
+RAlt & o::Send {Shift down}{End}{Shift up}{CTRL down}{b}{CTRL up}
+
+
+; only kind of works - go from.
+; A(
+;   1,
+;   2
+; )
+; to A(1, 2)
+RAlt & p::Send {Shift down}{Home}{Shift up}{BackSpace}{BackSpace}{Space}{Down}{Home}
+
 
 ; MOUSE BUTTON SHORTCUTS
 ; ======================
-; F numbering corresponds to button numbers
-; F16 is G-Shift button
-
-; YouTube
-F16 & RButton::Send >>>>
-F16 & LButton::Send <<<<
-
-; switch desktops
-F16 & F17::Send ^#{Left}
-F16 & F18::Send ^#{Right}
-
-; media
-F14::Send {Volume_Down}
-F15::Send {Volume_Up}
-F17::Send {Media_Prev}
-F18::Send {Media_Next}
-F19::Send {Media_Play_Pause}
+; F numbering
+; F13 vol down
+; F14 vol up
+; F15 media next
+; F16 media pause
+; F17 desktop left
+; F18 desktop right
+; F19 youtube faster
+; F20 youtube slower
 
 
